@@ -13,10 +13,25 @@ class CartSeeder extends Seeder
     public function run()
     {
         Cart::create([
-            'id_user'       => 1,
-            'id_products'   => 1,
+            'id_transaction' => 1,
+            'id_user'        => 2,
+            'id_products'    => 1,
+            'quantity'       => 2,
+            'total_price'    => '40000',
+        ]);
+        Cart::create([
+            'id_transaction' => 1,
+            'id_user'       => 2,
+            'id_products'   => 2,
             'quantity'      => 2,
-            'total_price'   => '40000',
+            'total_price'   => '60000',
+        ]);
+        Cart::create([
+            'id_transaction' => NULL,
+            'id_user'       => 2,
+            'id_products'   => 3,
+            'quantity'      => 2,
+            'total_price'   => '15000',
         ]);
     }
 }

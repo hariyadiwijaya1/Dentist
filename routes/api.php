@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\TransactionController;
 
 Route::middleware('auth:api')->group( function () {
     Route::post('logout', [AuthController::class,'logout']);
@@ -34,8 +35,16 @@ Route::put('products/{product}', [ProductController::class,'update']);
 Route::get('products/{product}',[ProductController::class,'show']);
 // Route::post('login', 'AuthController@login');
 
-/* ROUTE PRODUCT */
+/* ROUTE CART */
 Route::get('carts/{cart}',[CartController::class,'show']);
 Route::post('carts', [CartController::class,'store']);
 Route::put('carts/{cart}', [CartController::class,'update']);
 Route::delete('carts/{cart}', [CartController::class,'destroy']);
+
+/* ROUTE TRANSACTION */
+Route::get('transactions', [TransactionController::class,'index']);
+Route::post('transactions', [TransactionController::class,'store']);
+Route::delete('transactions/{transaction}', [TransactionController::class,'destroy']);
+Route::put('transactions/{transaction}', [TransactionController::class,'update']);
+Route::get('transactions/{id}',[TransactionController::class,'show']);
+

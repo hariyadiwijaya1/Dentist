@@ -36,7 +36,7 @@ class ProductController extends Controller
         return new ApiResource(true, 'Product berhasil ditambahkan', $product);
     }
 
-    public function destroy(Product $product )
+    public function destroy(Product $product)
     {
         $product->delete();
         return new ApiResource(true, 'Product berhasil dihapus');
