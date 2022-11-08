@@ -30,6 +30,22 @@ class UserSeeder extends Seeder
             'phone'         => '082119880954',
         ]);
 
+        $user = User::create([
+            'name'      => 'User satu',
+            'email'     => 'user@coding.com',
+            'password'  => bcrypt('jcc2022'),
+            'role'      => 2
+        ]);
+
+        UserDetail::create([
+            'id'            => $user->id,
+            'user_number'   => 2,
+            'gender'        => 'Laki-laki',
+            'blood_group'   => 'B',
+            'address'       => 'Bogor',
+            'phone'         => '12345678',
+        ]);
+
         Artisan::call('passport:install');
     }
 }

@@ -5,17 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\ProductController;
-
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
+use App\Http\Controllers\CartController;
 
 Route::middleware('auth:api')->group( function () {
     Route::post('logout', [AuthController::class,'logout']);
@@ -43,3 +33,9 @@ Route::delete('products/{product}', [ProductController::class,'destroy']);
 Route::put('products/{product}', [ProductController::class,'update']);
 Route::get('products/{product}',[ProductController::class,'show']);
 // Route::post('login', 'AuthController@login');
+
+/* ROUTE PRODUCT */
+Route::get('carts/{cart}',[CartController::class,'show']);
+Route::post('carts', [CartController::class,'store']);
+Route::put('carts/{cart}', [CartController::class,'update']);
+Route::delete('carts/{cart}', [CartController::class,'destroy']);

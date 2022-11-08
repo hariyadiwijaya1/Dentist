@@ -19,7 +19,7 @@ class DoctorSeeder extends Seeder
             'address'       => 'Tasikmalaya',
             'specialist'    => 'Gigi',
             'status'        => 'Tersedia',
-            'photo'         => 'doctor.jpg',
+            'photo'         => 'default.jpg',
         ]);
     }
 }
